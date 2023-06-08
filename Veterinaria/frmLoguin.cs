@@ -18,6 +18,28 @@ namespace Veterinaria
         }
         int a = 0;
 
+        private void Validar()
+        {
+            if(txtUsuario.Text != string.Empty && txtContra.Text != string.Empty)
+            {
+                btnLoguin.Enabled = true;
+               
+                
+            }
+            else
+            {
+                btnLoguin.Enabled = false;
+            }
+        }
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+           Validar();
+        }
+
+        private void txtContra_TextChanged(object sender, EventArgs e)
+        {
+            Validar();
+        }
         private void btnLoguin_Click(object sender, EventArgs e)
         {
             string User = "VAAdmin";
@@ -47,6 +69,11 @@ namespace Veterinaria
                 }
             }
 
+        }
+
+        private void frmLoguin_Load(object sender, EventArgs e)
+        {
+            btnLoguin.Enabled = false;
         }
     }
 }

@@ -64,6 +64,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(303, 23);
             this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
             // txtContra
             // 
@@ -72,6 +73,7 @@
             this.txtContra.PasswordChar = '*';
             this.txtContra.Size = new System.Drawing.Size(303, 23);
             this.txtContra.TabIndex = 3;
+            this.txtContra.TextChanged += new System.EventHandler(this.txtContra_TextChanged);
             // 
             // btnLoguin
             // 
@@ -106,6 +108,7 @@
             this.Name = "frmLoguin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loguin";
+            this.Load += new System.EventHandler(this.frmLoguin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
