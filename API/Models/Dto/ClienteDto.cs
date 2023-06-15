@@ -8,7 +8,6 @@ namespace API.Models.Dto
         [Required]
         [MaxLength(50)]
 
-        public string? Raza { get; set; }
         public string? Name { get; set; }
         public string? Medicamento { get; set; }
 

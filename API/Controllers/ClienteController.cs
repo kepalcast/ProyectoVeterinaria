@@ -1,5 +1,7 @@
 ﻿using API.Data;
 using API.Models.Dto;
+using API.Repository.IRepository;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,24 +12,27 @@ namespace API.Controllers
     [ApiController]
     public class ClienteController : ControllerBase
     {
-        private readonly ClienteContext _db;
+        private readonly IClientRepository _clientRepository;
         private readonly ILogger<ClienteController> _logger;
+        private readonly IMapper _mapper;
 
-        public ClienteController(ILogger<ClienteController> logger, ClienteContext db)
+        public ClienteController(ILogger<ClienteController> logger, IClientRepository clientRepository, IMapper mapper)
         {
             _logger = logger;
-            _db = db;
+            _clientRepository = clientRepository;
+            _mapper = mapper;
         }
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<ClienteDto>>> GetStudents()
         {
-            _logger.LogInformation("Obtener los Estudiantes");
-            return Ok(await _db.clientes.ToListAsync());
+            _logger.LogInformation("Obtener los Clientes");
+            var clientList = await _clientRepository.GetAll();
+            return Ok(_mapper.Map<IEnumerable<ClienteDto>>(clientList));
         }
 
-        [HttpGet("{id:int}", Name = "GetStudent")]
+        [HttpGet("{id:int}", Name = "GetClient")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -38,14 +43,14 @@ namespace API.Controllers
                 _logger.LogError($"Error al traer al cliente con Id {id}");
                 return BadRequest();
             }
-            var student = await _db.clientes.FirstOrDefaultAsync(s => s.idCliente == id);
+            var cliente = await _clientRepository.Get(s => s.idCliente == id);
 
-            if (student == null)
+            if (cliente == null)
             {
                 return NotFound();
             }
 
-            return Ok(student);
+            return Ok(_mapper.Map<ClienteDto>(cliente));
         }
 
 

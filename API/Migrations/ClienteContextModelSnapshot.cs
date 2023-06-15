@@ -37,19 +37,21 @@ namespace API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Precio")
                         .HasColumnType("float");
 
-                    b.Property<string>("Raza")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("RazaID")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("fechaCaducidad")
                         .HasColumnType("datetime2");
 
                     b.HasKey("idCliente");
+
+                    b.HasIndex("RazaID");
 
                     b.ToTable("clientes");
 
@@ -61,7 +63,7 @@ namespace API.Migrations
                             Medicamento = "Albendazol",
                             Name = "Pelusa",
                             Precio = 350.0,
-                            Raza = "Perro",
+                            RazaID = 0,
                             fechaCaducidad = new DateTime(2030, 5, 29, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -71,7 +73,7 @@ namespace API.Migrations
                             Medicamento = "Metronidazol",
                             Name = "Michi",
                             Precio = 500.0,
-                            Raza = "Gato",
+                            RazaID = 0,
                             fechaCaducidad = new DateTime(2028, 10, 30, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -81,9 +83,47 @@ namespace API.Migrations
                             Medicamento = "Clenbuteroll",
                             Name = "Kimba",
                             Precio = 700.0,
-                            Raza = "Vaca",
+                            RazaID = 0,
                             fechaCaducidad = new DateTime(2032, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
+                });
+
+            modelBuilder.Entity("API.Models.Raza", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RazaName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("raza");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            RazaName = "Perro"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            RazaName = "Gato"
+                        });
+                });
+
+            modelBuilder.Entity("API.Models.Cliente", b =>
+                {
+                    b.HasOne("API.Models.Raza", "Raza")
+                        .WithMany()
+                        .HasForeignKey("RazaID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Raza");
                 });
 #pragma warning restore 612, 618
         }

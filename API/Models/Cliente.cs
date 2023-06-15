@@ -9,7 +9,6 @@ namespace API.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idCliente { get; set; }
         [Required]
-        public string? Raza { get; set; }
         public string? Name { get; set; }
         public string? Medicamento { get; set; }
 
@@ -17,6 +16,11 @@ namespace API.Models
 
         public string? Empresa { get; set; }
         public DateTime fechaCaducidad { get; set; }
+
+        public int RazaId { get; set; }
+        [ForeignKey("RazaId")]
+
+        public Raza Raza { get; set; }
 
 
 

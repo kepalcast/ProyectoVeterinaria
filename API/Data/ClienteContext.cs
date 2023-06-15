@@ -11,14 +11,26 @@ namespace API.Data
         }
 
         public DbSet<Cliente> clientes { get; set; }
+        public DbSet<Raza> raza { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Raza>().HasData(
+                new Raza()
+                {
+                    Id = 1,
+                    RazaName = "Perro"
+
+                },
+                new Raza()
+                {
+                    Id = 2,
+                    RazaName = "Gato"
+                });
             modelBuilder.Entity<Cliente>().HasData(
                 new Cliente()
                 {
                     idCliente = 1,
-                    Raza = "Perro",
                     Name = "Pelusa",
                     Medicamento = "Albendazol",
                     Precio = 350,
@@ -29,7 +41,6 @@ namespace API.Data
                 new Cliente()
                 {
                     idCliente = 2,
-                    Raza = "Gato",
                     Name = "Michi",
                     Medicamento = "Metronidazol",
                     Precio = 500,
@@ -39,7 +50,6 @@ namespace API.Data
                 new Cliente()
                 {
                     idCliente = 3,
-                    Raza = "Vaca",
                     Name = "Kimba",
                     Medicamento = "Clenbuteroll",
                     Precio = 700,
