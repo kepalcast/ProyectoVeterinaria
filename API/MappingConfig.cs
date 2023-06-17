@@ -15,6 +15,7 @@ namespace API
             CreateMap<ClienteDto, Cliente>();
 
             CreateMap<Cliente, ClienteCreateDto>().ReverseMap();
+            CreateMap<Cliente, ClienteUpdateDto>().ReverseMap();
         }
     }
 }
