@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(ClienteContext))]
-    [Migration("20230615061841_AgregarRaza")]
-    partial class AgregarRaza
+    [Migration("20230617015045_INIT")]
+    partial class INIT
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -43,10 +43,13 @@ namespace API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<double>("Pesokg")
+                        .HasColumnType("float");
+
                     b.Property<double>("Precio")
                         .HasColumnType("float");
 
-                    b.Property<int>("RazaID")
+                    b.Property<int>("RazaId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("fechaCaducidad")
@@ -54,7 +57,7 @@ namespace API.Migrations
 
                     b.HasKey("idCliente");
 
-                    b.HasIndex("RazaID");
+                    b.HasIndex("RazaId");
 
                     b.ToTable("clientes");
 
@@ -65,8 +68,9 @@ namespace API.Migrations
                             Empresa = "Pet-Max",
                             Medicamento = "Albendazol",
                             Name = "Pelusa",
+                            Pesokg = 27.5,
                             Precio = 350.0,
-                            RazaID = 0,
+                            RazaId = 2,
                             fechaCaducidad = new DateTime(2030, 5, 29, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -75,8 +79,9 @@ namespace API.Migrations
                             Empresa = "Kron",
                             Medicamento = "Metronidazol",
                             Name = "Michi",
+                            Pesokg = 4.7999999999999998,
                             Precio = 500.0,
-                            RazaID = 0,
+                            RazaId = 2,
                             fechaCaducidad = new DateTime(2028, 10, 30, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
@@ -85,8 +90,9 @@ namespace API.Migrations
                             Empresa = "Boehringen",
                             Medicamento = "Clenbuteroll",
                             Name = "Kimba",
+                            Pesokg = 31.199999999999999,
                             Precio = 700.0,
-                            RazaID = 0,
+                            RazaId = 1,
                             fechaCaducidad = new DateTime(2032, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
@@ -122,7 +128,7 @@ namespace API.Migrations
                 {
                     b.HasOne("API.Models.Raza", "Raza")
                         .WithMany()
-                        .HasForeignKey("RazaID")
+                        .HasForeignKey("RazaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

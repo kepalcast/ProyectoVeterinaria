@@ -10,6 +10,8 @@ namespace API.Models
         public int idCliente { get; set; }
         [Required]
         public string? Name { get; set; }
+
+        public double Pesokg { get; set; }    
         public string? Medicamento { get; set; }
 
         public double Precio { get; set; }
@@ -19,7 +21,6 @@ namespace API.Models
 
         public int RazaId { get; set; }
         [ForeignKey("RazaId")]
-
         public Raza Raza { get; set; }
 
 
