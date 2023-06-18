@@ -1,4 +1,4 @@
-namespace Veterinaria
+    namespace Veterinaria
 {
     internal static class Program
     {

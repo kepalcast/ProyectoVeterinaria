@@ -42,11 +42,11 @@ namespace Veterinaria
         }
         private void btnLoguin_Click(object sender, EventArgs e)
         {
-            string User = "VAAdmin";
-            string Pass = "Admin*2023";
+            string User = "Admin";
+            string Pass = "Admin2023";
             txtContra.Text.Equals(Pass);
             txtUsuario.Text.Equals(User);
-            Form1 obj = new Form1();
+            Form2 obj = new Form2();
 
             if (txtUsuario.Text.Equals(User) && txtContra.Text.Equals(Pass))
             {
