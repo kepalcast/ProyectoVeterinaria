@@ -14,7 +14,7 @@ namespace API.Models.Dto
         public double Precio { get; set; }
 
         public string? Empresa { get; set; }
-        public DateTime fechaCaducidad { get; set; }
+        public int AñodeCaducidad { get; set; }
 
         public int RazaId { get; set; }
     }

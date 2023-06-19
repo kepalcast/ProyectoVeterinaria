@@ -35,7 +35,7 @@ namespace API.Data
                     Medicamento = "Albendazol",
                     Precio = 350,
                     Empresa = "Pet-Max",
-                    fechaCaducidad = new DateTime(2030, 05, 29),
+                    AñodeCaducidad = 2028,
                     RazaId = 2
 
                 },
@@ -47,7 +47,7 @@ namespace API.Data
                     Medicamento = "Metronidazol",
                     Precio = 500,
                     Empresa = "Kron",
-                    fechaCaducidad = new DateTime(2028, 10, 30),
+                    AñodeCaducidad = 2030,
                     RazaId = 2
                 },
                 new Cliente()
@@ -58,7 +58,7 @@ namespace API.Data
                     Medicamento = "Clenbuteroll",
                     Precio = 700,
                     Empresa = "Boehringen",
-                    fechaCaducidad = new DateTime(2032, 02, 21),
+                    AñodeCaducidad = 2032,
                     RazaId = 1
                 });
         }

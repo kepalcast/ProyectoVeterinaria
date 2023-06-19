@@ -24,7 +24,7 @@ namespace Veterinaria.Dto
         public string? Empresa { get; set; }
 
      
-        public DateTime fechaCaducidad { get; set; }
+        public int AñodeCaducidad { get; set; }
 
         [Required]
         public int RazaId { get; set; }

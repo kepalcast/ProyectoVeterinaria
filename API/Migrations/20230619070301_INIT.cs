@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -36,7 +35,7 @@ namespace API.Migrations
                     Medicamento = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Precio = table.Column<double>(type: "float", nullable: false),
                     Empresa = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    fechaCaducidad = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AñodeCaducidad = table.Column<int>(type: "int", nullable: false),
                     RazaId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -61,12 +60,12 @@ namespace API.Migrations
 
             migrationBuilder.InsertData(
                 table: "clientes",
-                columns: new[] { "idCliente", "Empresa", "Medicamento", "Name", "Pesokg", "Precio", "RazaId", "fechaCaducidad" },
+                columns: new[] { "idCliente", "AñodeCaducidad", "Empresa", "Medicamento", "Name", "Pesokg", "Precio", "RazaId" },
                 values: new object[,]
                 {
-                    { 1, "Pet-Max", "Albendazol", "Pelusa", 27.5, 350.0, 2, new DateTime(2030, 5, 29, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 2, "Kron", "Metronidazol", "Michi", 4.7999999999999998, 500.0, 2, new DateTime(2028, 10, 30, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 3, "Boehringen", "Clenbuteroll", "Kimba", 31.199999999999999, 700.0, 1, new DateTime(2032, 2, 21, 0, 0, 0, 0, DateTimeKind.Unspecified) }
+                    { 1, 2028, "Pet-Max", "Albendazol", "Pelusa", 27.5, 350.0, 2 },
+                    { 2, 2030, "Kron", "Metronidazol", "Michi", 4.7999999999999998, 500.0, 2 },
+                    { 3, 2032, "Boehringen", "Clenbuteroll", "Kimba", 31.199999999999999, 700.0, 1 }
                 });
 
             migrationBuilder.CreateIndex(

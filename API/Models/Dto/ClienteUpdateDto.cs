@@ -19,7 +19,7 @@ namespace API.Models.Dto
         public string? Empresa { get; set; }
 
         [Required]
-        public DateTime fechaCaducidad { get; set; }
+        public int AñodeCaducidad { get; set; }
 
         [Required]
         public int RazaId { get; set; }

@@ -119,7 +119,7 @@ namespace Veterinaria
                     txtMedicamento.Text = clienteDto.Medicamento;
                     txtPrecio.Text = clienteDto.Precio.ToString();
                     txtEmpresa.Text = clienteDto.Empresa;
-                    txtFechaCad.Text = clienteDto.fechaCaducidad.ToString();
+                    txtFechaCad.Text = clienteDto.AñodeCaducidad.ToString();
                     txtEspecie.Text = clienteDto.RazaId.ToString();
                 }
                 else
@@ -145,7 +145,7 @@ namespace Veterinaria
             ClientDto.Medicamento = txtMedicamento.Text;
             ClientDto.Precio = double.Parse(txtPrecio.Text);
             ClientDto.Empresa = txtEmpresa.Text;
-            //ClientDto.fechaCaducidad = txtFechaCad.Text.ToString();  //Este no se pero no me dejo convertirlo en String
+            ClientDto.AñodeCaducidad = int.Parse(txtFechaCad.Text);
             ClientDto.RazaId = int.Parse(txtEspecie.Text);
             using (var client = new HttpClient())
             {
