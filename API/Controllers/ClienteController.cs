@@ -81,7 +81,7 @@ namespace API.Controllers
 
             await _clientRepository.Add(modelo);
 
-            return CreatedAtRoute("GetCliente", new { id = modelo.idCliente }, modelo);
+            return CreatedAtRoute("GetClient", new { id = modelo.idCliente }, modelo);
         }
 
         [HttpDelete("{id:int}")]
@@ -89,7 +89,7 @@ namespace API.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
-        public async Task<IActionResult> DeleteStudent(int id)
+        public async Task<IActionResult> DeleteClient(int id)
         {
             if (id == 0)
             {

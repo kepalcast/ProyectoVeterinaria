@@ -166,10 +166,10 @@ namespace Veterinaria
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (id != 0)
-                DeleteProduct(id);
+                DeleteProduct();
         }
 
-        private async void DeleteProduct(int id)
+        private async void DeleteProduct()
         {
             using (var client = new HttpClient())
             {
