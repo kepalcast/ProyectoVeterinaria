@@ -134,13 +134,13 @@ namespace API.Controllers
 
             var client = await _clientRepository.Get(s => s.idCliente == id, tracked: false);
 
-            ClienteUpdateDto clientUpdateDto = _mapper.Map<ClienteUpdateDto>(client);
+            ClienteUpdateDto clientUpdateDto =  _mapper.Map<ClienteUpdateDto>(client);
 
             if (client == null) return BadRequest();
 
             patchDto.ApplyTo(clientUpdateDto, (Microsoft.AspNetCore.JsonPatch.Adapters.IObjectAdapter)ModelState);
 
-            if (!ModelState.IsValid)
+                if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }

@@ -22,11 +22,13 @@ namespace Veterinaria.Dto
         public double Precio { get; set; }
         [Required]
         public string? Empresa { get; set; }
+        [Required]
 
      
         public int AñodeCaducidad { get; set; }
-
         [Required]
+
+        
         public int RazaId { get; set; }
     }
 }

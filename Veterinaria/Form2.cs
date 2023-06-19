@@ -58,6 +58,7 @@ namespace Veterinaria
             HCliente.RazaId = int.Parse(txtEspecie.Text);
             HCliente.Pesokg = double.Parse(txtPeso.Text);
             HCliente.Precio = double.Parse(txtPrecio.Text);
+            HCliente.AñodeCaducidad = int.Parse(txtFechaCad.Text);
        
             using (var client = new HttpClient())
             {
@@ -131,6 +132,7 @@ namespace Veterinaria
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            
             if (id != 0)
                 UpdateProduct();
         }
@@ -164,10 +166,10 @@ namespace Veterinaria
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (id != 0)
-                DeleteProduct();
+                DeleteProduct(id);
         }
 
-        private async void DeleteProduct()
+        private async void DeleteProduct(int id)
         {
             using (var client = new HttpClient())
             {

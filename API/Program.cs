@@ -20,6 +20,7 @@ builder.Services.AddDbContext<ClienteContext>(option =>
 builder.Services.AddAutoMapper(typeof(MappingConfig));
 
 builder.Services.AddScoped<IClientRepository, ClientRepository>();
+builder.Services.AddScoped<IRazaRepositiry, RazaRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

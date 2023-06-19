@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(ClienteContext))]
-    [Migration("20230619070301_INIT")]
+    [Migration("20230619181638_INIT")]
     partial class INIT
     {
         /// <inheritdoc />
