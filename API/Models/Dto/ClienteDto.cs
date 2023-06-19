@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace API.Models.Dto
 {
@@ -19,5 +20,8 @@ namespace API.Models.Dto
         public DateTime fechaCaducidad { get; set; }
 
         public int RazaId { get; set; }
+
+
     }
 }
+

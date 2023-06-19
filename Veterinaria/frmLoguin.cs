@@ -47,12 +47,14 @@ namespace Veterinaria
             txtContra.Text.Equals(Pass);
             txtUsuario.Text.Equals(User);
             Form2 obj = new Form2();
+            
 
             if (txtUsuario.Text.Equals(User) && txtContra.Text.Equals(Pass))
             {
                 obj.ShowDialog();
                 txtUsuario.Clear();
                 txtContra.Clear();
+                this.Hide();
 
             }
             else

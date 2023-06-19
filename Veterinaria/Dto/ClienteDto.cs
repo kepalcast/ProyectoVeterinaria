@@ -24,5 +24,6 @@ namespace Veterinaria.Dto
         public DateTime fechaCaducidad { get; set; }
 
         public int RazaId { get; set; }
+
     }
 }

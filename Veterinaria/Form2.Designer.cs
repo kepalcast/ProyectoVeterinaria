@@ -109,6 +109,7 @@
             // txtID
             // 
             txtID.BackColor = Color.DarkSeaGreen;
+            txtID.Enabled = false;
             txtID.Location = new Point(107, 32);
             txtID.Name = "txtID";
             txtID.Size = new Size(100, 23);

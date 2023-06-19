@@ -33,8 +33,8 @@ namespace Veterinaria
                     if (response.IsSuccessStatusCode)
                     {
                         var cliente = await response.Content.ReadAsStringAsync();
-                        var displaydata = JsonConvert.SerializeObject(cliente);
-                        dgvVet.DataSource = displaydata.ToList();
+                        var displayData = JsonConvert.DeserializeObject<List<ClienteDto>>(cliente);
+                        dgvVet.DataSource = displayData.ToList();
                     }
                     else
                     {
@@ -53,19 +53,21 @@ namespace Veterinaria
         {
             ClienteCreateDto HCliente = new ClienteCreateDto();
             HCliente.Name = txtNombre.Text;
+            HCliente.Medicamento = txtMedicamento.Text;
+            HCliente.Empresa = txtEmpresa.Text;
+            HCliente.RazaId = int.Parse(txtEspecie.Text);
+            HCliente.Pesokg = double.Parse(txtPeso.Text);
+            HCliente.Precio = double.Parse(txtPrecio.Text);
+       
             using (var client = new HttpClient())
             {
                 var seralizedClient = JsonConvert.SerializeObject(HCliente);
                 var content = new StringContent(seralizedClient, Encoding.UTF8, "application/json");
                 var response = await client.PostAsync("https://localhost:7097/api/Cliente", content);
                 if (response.IsSuccessStatusCode)
-                {
                     MessageBox.Show("Dato Agregado Correctamente");
-                }
                 else
-                {
                     MessageBox.Show($"Error al guardar el Dato: {response.Content.ReadAsStringAsync().Result}");
-                }
             }
             Clear();
             GetAllProducts();
@@ -162,12 +164,12 @@ namespace Veterinaria
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (id != 0)
-                DeleteProduct(id);
+                DeleteProduct();
         }
 
-        private async void DeleteProduct(int id)
+        private async void DeleteProduct()
         {
-            using ( var client = new HttpClient())
+            using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("https://localhost:7097/api/Cliente");
                 var response = await client.DeleteAsync(String.Format("{0}/{1}",
@@ -177,6 +179,8 @@ namespace Veterinaria
                 else
                     MessageBox.Show($"No se pudo eliminar el Dato: {response.StatusCode}");
             }
+            Clear();
+            GetAllProducts();
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Veterinaria.Dto
         [Required]
         public string? Empresa { get; set; }
 
-        [Required]
+     
         public DateTime fechaCaducidad { get; set; }
 
         [Required]
