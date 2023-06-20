@@ -162,7 +162,15 @@ namespace Veterinaria
 
         private void btnIsertar_Click_1(object sender, EventArgs e)
         {
-            AddProduct();
+            if (txtNombre.Text == "" || txtMedicamento.Text == "" || txtPeso.Text == "" || txtPrecio.Text == "" || txtEmpresa.Text == "" || txtEspecie.Text == "" || txtFechaCad.Text == "")
+            {
+                MessageBox.Show("NO SE PUEDEN DEJAR CAMPOS VACIOS!!");
+            }
+            else
+            {
+
+                AddProduct();
+            }
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
