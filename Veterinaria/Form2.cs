@@ -184,5 +184,20 @@ namespace Veterinaria
             Clear();
             GetAllProducts();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblFecha.Text = DateTime.Now.ToString("dd MMMM yyyy");
+        }
+
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Form2_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
