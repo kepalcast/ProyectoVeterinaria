@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using objExcel = Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +21,7 @@ namespace Veterinaria
             InitializeComponent();
         }
 
-        
+        string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
         private async void GetAllProducts()
         {
@@ -200,6 +202,30 @@ namespace Veterinaria
                     GetProductsById(id);
                 }
             }
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            objExcel.Application objAplicacion = new objExcel.Application();
+            Workbook objLibro = objAplicacion.Workbooks.Add(XlSheetType.xlWorksheet);
+            Worksheet objHoja = (Worksheet)objAplicacion.ActiveSheet;
+
+            objAplicacion.Visible = false;
+
+
+
+            foreach (DataGridViewColumn columna in dgvVet.Columns)
+            {
+                objHoja.Cells[1, columna.Index + 1] = columna.HeaderText;
+                foreach (DataGridViewRow fila in dgvVet.Rows)
+                {
+                    objHoja.Cells[fila.Index + 2, columna.Index + 1] = fila.Cells[columna.Index].Value;
+                }
+            }
+
+            objLibro.SaveAs(ruta + "\\RegistroVeterinaria.xlsx");
+            objLibro.Close();
+            MessageBox.Show("Se creo el archivo excel correctamente");
         }
     }
 }

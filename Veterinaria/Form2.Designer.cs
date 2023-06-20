@@ -61,6 +61,7 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.dgvVet = new System.Windows.Forms.DataGridView();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnguardar = new System.Windows.Forms.Button();
             this.panelDatos.SuspendLayout();
             this.panelNombre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -329,7 +330,7 @@
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
             this.btnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpiar.Location = new System.Drawing.Point(597, 171);
+            this.btnLimpiar.Location = new System.Drawing.Point(508, 174);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(163, 36);
             this.btnLimpiar.TabIndex = 102;
@@ -344,7 +345,7 @@
             this.btnIsertar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIsertar.Image = ((System.Drawing.Image)(resources.GetObject("btnIsertar.Image")));
             this.btnIsertar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIsertar.Location = new System.Drawing.Point(384, 129);
+            this.btnIsertar.Location = new System.Drawing.Point(326, 132);
             this.btnIsertar.Name = "btnIsertar";
             this.btnIsertar.Size = new System.Drawing.Size(176, 36);
             this.btnIsertar.TabIndex = 101;
@@ -359,7 +360,7 @@
             this.btnActualizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnActualizar.Location = new System.Drawing.Point(384, 171);
+            this.btnActualizar.Location = new System.Drawing.Point(326, 174);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(176, 36);
             this.btnActualizar.TabIndex = 100;
@@ -374,7 +375,7 @@
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(597, 129);
+            this.btnEliminar.Location = new System.Drawing.Point(508, 132);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(163, 36);
             this.btnEliminar.TabIndex = 99;
@@ -404,12 +405,27 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnguardar
+            // 
+            this.btnguardar.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.btnguardar.Image = ((System.Drawing.Image)(resources.GetObject("btnguardar.Image")));
+            this.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnguardar.Location = new System.Drawing.Point(677, 149);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(150, 38);
+            this.btnguardar.TabIndex = 105;
+            this.btnguardar.Text = "Guardar";
+            this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LemonChiffon;
             this.ClientSize = new System.Drawing.Size(825, 482);
+            this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.panelDatos);
             this.Controls.Add(this.panelNombre);
             this.Controls.Add(this.btnLimpiar);
@@ -468,5 +484,6 @@
         private Label lblFecha;
         private Label label12;
         private PictureBox pictureBox2;
+        private Button btnguardar;
     }
 }

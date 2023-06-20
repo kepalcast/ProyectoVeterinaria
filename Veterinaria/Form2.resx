@@ -494,6 +494,27 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="btnguardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1
+        MAAA6mAAADqYAAAXcJy6UTwAAAG8UExURePq44a6hiqJKhF8ERB7ECGEISmIKSmJKSaHJhZ/FiOFI4S4
+        hOLq4vX09fLy8vPz8w97DzSONKDHoLnUubjUuLbTtq/Pr6zOrK3OrbPRs2OnYxJ8Eh6DHnmzed7o3vTz
+        9BB8EA56Dl+lX+3v7ff19/b09vb19vn2+eHp4Xuze1ujW16lXrHQsaPJoxyCHAx6DBmAGXGvceDp4Ozv
+        7NLh0jqROgt5C4q8iqbKph2CHQ57DnOwc/T09DuSOw16DYy9jKXKpRqBGoG3geft52KnYuvv6/Py8zuT
+        OyiIKG6tbvXz9WapZjqSOgt4C4u8i2epZ9bj1kqaSh+DHyOGI5TBlKfLpx6CHk+cT9rm2u7w7u3w7eTq
+        5LXStafKp6jLqM7fzo++jxiAGA96D1WfVWmqaWiqaGura2ysbDKOMkmZSVOfU1KeUjeRNxR+FHKvcubs
+        5ujt6L3WvTSPNJG/kdzn3EaYRpC/kNzm3PLz8tvm25DAkBZ+FpK/kt3n3XCucEybTHy0fOnu6e/x78nd
+        yQp5CiSGJEubSy6LLnOvc1KfUoC2gOTr5Mvey4i6iGSoZGWoZWSnZG+tb6TKpP///40o5V4AAAAHdElN
+        RQfnBhQDIjAUg3wnAAABr0lEQVQ4T2NgYGRiZmFmZWKDAnYmIODg5OLm4eXj42dg5BJgERAUEhaBAlEx
+        cQlJSSlpGVk5eaA0k4ACi6KSsoqKiioQqalraGpp66jr6ukbGBrJ8zEws7AoKEoZ8wNNAiFeE1MzFnNe
+        C0tFK05rIxsGFnRpWztpe14HS0UFK0cnZwYWBaDhLq5u/Px8IKRq4g6RtgIKe1jgk2Zh9mQAksiGe8Gk
+        FYHamL0xdfv4svjBdPtDpIG6+fmBKtz41QICg4JD1ELDoNIgw63CIyKjICAyOiY2Lt44ITEJZDhEN4te
+        ckoqFKSkpaenuWSARGHSCgJWAmhAASQPMlyBRUBR0Q4NKCoqAi0H6WZhYc3MysYEObkQaeY8o3xMUFBY
+        pAgynCW3mBfoLXTAW1JqB5Euk4cGGRhBKflysDQLUNoGGmRgBKV4IdIQ3RVQI+EAVRrFcDCSr4QZXkXI
+        cDcKDMfncpC0vBsfBgBLezNUC+TWAEMNaAAU2fDLgxBvbamddB1DPQtzQ2OUcpQyDEGppmafllYHBuE2
+        zvYU6w5M0OkY3NXNwNfT69/XjwVMmDipWx4AyZOjErdZWjsAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAgIAAAAEAIAAoCAEAFgAAACgAAACAAAAAAAEAAAEAIAAAAAAAAAABAAgNAAAIDQAAAAAAAAAA

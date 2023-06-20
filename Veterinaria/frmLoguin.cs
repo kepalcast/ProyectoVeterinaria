@@ -46,12 +46,12 @@ namespace Veterinaria
             string Pass = "Admin2023";
             txtContra.Text.Equals(Pass);
             txtUsuario.Text.Equals(User);
-            Form2 obj = new Form2();
+            Form2 cam = new Form2();
             
 
             if (txtUsuario.Text.Equals(User) && txtContra.Text.Equals(Pass))
             {
-                obj.ShowDialog();
+                cam.ShowDialog();
                 txtUsuario.Clear();
                 txtContra.Clear();
                 this.Hide();
