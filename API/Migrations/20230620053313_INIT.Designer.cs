@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(ClienteContext))]
-    [Migration("20230619181638_INIT")]
+    [Migration("20230620053313_INIT")]
     partial class INIT
     {
         /// <inheritdoc />
@@ -93,6 +93,50 @@ namespace API.Migrations
                             Pesokg = 31.199999999999999,
                             Precio = 700.0,
                             RazaId = 1
+                        },
+                        new
+                        {
+                            idCliente = 4,
+                            AñodeCaducidad = 2032,
+                            Empresa = "Calier",
+                            Medicamento = "Nicilan",
+                            Name = "Bethoveen",
+                            Pesokg = 12.199999999999999,
+                            Precio = 450.0,
+                            RazaId = 1
+                        },
+                        new
+                        {
+                            idCliente = 5,
+                            AñodeCaducidad = 2030,
+                            Empresa = "Invet",
+                            Medicamento = "Gycoflex",
+                            Name = "Kira",
+                            Pesokg = 20.899999999999999,
+                            Precio = 500.0,
+                            RazaId = 1
+                        },
+                        new
+                        {
+                            idCliente = 6,
+                            AñodeCaducidad = 2025,
+                            Empresa = "Zoetis",
+                            Medicamento = "Apoquel",
+                            Name = "KuroNeko",
+                            Pesokg = 10.800000000000001,
+                            Precio = 1200.0,
+                            RazaId = 2
+                        },
+                        new
+                        {
+                            idCliente = 7,
+                            AñodeCaducidad = 2030,
+                            Empresa = "Nutraforz",
+                            Medicamento = "Hepatoforz",
+                            Name = "Gatito",
+                            Pesokg = 6.5999999999999996,
+                            Precio = 3000.0,
+                            RazaId = 2
                         });
                 });
 

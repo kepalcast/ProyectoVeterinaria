@@ -1,5 +1,4 @@
-﻿
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -66,7 +65,11 @@ namespace API.Migrations
                 {
                     { 1, 2028, "Pet-Max", "Albendazol", "Pelusa", 27.5, 350.0, 2 },
                     { 2, 2030, "Kron", "Metronidazol", "Michi", 4.7999999999999998, 500.0, 2 },
-                    { 3, 2032, "Boehringen", "Clenbuteroll", "Kimba", 31.199999999999999, 700.0, 1 }
+                    { 3, 2032, "Boehringen", "Clenbuteroll", "Kimba", 31.199999999999999, 700.0, 1 },
+                    { 4, 2032, "Calier", "Nicilan", "Bethoveen", 12.199999999999999, 450.0, 1 },
+                    { 5, 2030, "Invet", "Gycoflex", "Kira", 20.899999999999999, 500.0, 1 },
+                    { 6, 2025, "Zoetis", "Apoquel", "KuroNeko", 10.800000000000001, 1200.0, 2 },
+                    { 7, 2030, "Nutraforz", "Hepatoforz", "Gatito", 6.5999999999999996, 3000.0, 2 }
                 });
 
             migrationBuilder.CreateIndex(

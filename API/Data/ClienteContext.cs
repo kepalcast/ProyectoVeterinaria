@@ -60,6 +60,50 @@ namespace API.Data
                     Empresa = "Boehringen",
                     AñodeCaducidad = 2032,
                     RazaId = 1
+                },
+                new Cliente()
+                {
+                    idCliente = 4,
+                    Name = "Bethoveen",
+                    Pesokg = 12.2,
+                    Medicamento = "Nicilan",
+                    Precio = 450,
+                    Empresa = "Calier",
+                    AñodeCaducidad = 2032,
+                    RazaId = 1
+                },
+                new Cliente()
+                {
+                    idCliente = 5,
+                    Name = "Kira",
+                    Pesokg = 20.9,
+                    Medicamento = "Gycoflex",
+                    Precio = 500,
+                    Empresa = "Invet",
+                    AñodeCaducidad = 2030,
+                    RazaId = 1
+                },
+                new Cliente()
+                {
+                    idCliente = 6,
+                    Name = "KuroNeko",
+                    Pesokg = 10.8,
+                    Medicamento = "Apoquel",
+                    Precio = 1200,
+                    Empresa = "Zoetis",
+                    AñodeCaducidad = 2025,
+                    RazaId = 2
+                },
+                new Cliente()
+                {
+                    idCliente = 7,
+                    Name = "Gatito",
+                    Pesokg = 6.6,
+                    Medicamento = "Hepatoforz",
+                    Precio = 3000,
+                    Empresa = "Nutraforz",
+                    AñodeCaducidad = 2030,
+                    RazaId = 2
                 });
         }
     }
