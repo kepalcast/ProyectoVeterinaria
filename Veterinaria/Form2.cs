@@ -19,10 +19,7 @@ namespace Veterinaria
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            GetAllProducts();
-        }
+        
 
         private async void GetAllProducts()
         {
@@ -44,10 +41,7 @@ namespace Veterinaria
             }
         }
 
-        private void btnIsertar_Click(object sender, EventArgs e)
-        {
-            AddProduct();
-        }
+        
 
         private async void AddProduct()
         {
@@ -59,7 +53,7 @@ namespace Veterinaria
             HCliente.Pesokg = double.Parse(txtPeso.Text);
             HCliente.Precio = double.Parse(txtPrecio.Text);
             HCliente.AñodeCaducidad = int.Parse(txtFechaCad.Text);
-       
+
             using (var client = new HttpClient())
             {
                 var seralizedClient = JsonConvert.SerializeObject(HCliente);
@@ -88,23 +82,7 @@ namespace Veterinaria
             id = 0;
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            Clear();
-        }
-
-        private void dgvVet_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            foreach (DataGridViewRow row in dgvVet.Rows)
-            {
-                if (row.Index == e.RowIndex)
-                {
-                    id = int.Parse(row.Cells[0].Value.ToString());
-                    GetProductsById(id);
-                }
-            }
-        }
-
+      
         private async void GetProductsById(int id)
         {
             using (var client = new HttpClient())
@@ -130,13 +108,7 @@ namespace Veterinaria
             }
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            
-            if (id != 0)
-                UpdateProduct();
-        }
-
+       
 
         private async void UpdateProduct()
         {
@@ -163,11 +135,7 @@ namespace Veterinaria
             GetAllProducts();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (id != 0)
-                DeleteProduct();
-        }
+       
 
         private async void DeleteProduct()
         {
@@ -190,14 +158,48 @@ namespace Veterinaria
             lblFecha.Text = DateTime.Now.ToString("dd MMMM yyyy");
         }
 
-        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
+        private void btnIsertar_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            AddProduct();
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            if (id != 0)
+                DeleteProduct();
+        }
+
+        private void btnActualizar_Click_1(object sender, EventArgs e)
+        {
+            if (id != 0)
+                UpdateProduct();
+        }
+
+        private void btnLimpiar_Click_1(object sender, EventArgs e)
+        {
+            Clear();
         }
 
         private void Form2_Load_1(object sender, EventArgs e)
         {
+            GetAllProducts();
+        }
 
+        private void dgvVet_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvVet_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvVet.Rows)
+            {
+                if (row.Index == e.RowIndex)
+                {
+                    id = int.Parse(row.Cells[0].Value.ToString());
+                    GetProductsById(id);
+                }
+            }
         }
     }
 }

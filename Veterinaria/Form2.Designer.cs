@@ -325,7 +325,6 @@
             // btnLimpiar
             // 
             this.btnLimpiar.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.Image")));
@@ -336,11 +335,11 @@
             this.btnLimpiar.TabIndex = 102;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click_1);
             // 
             // btnIsertar
             // 
             this.btnIsertar.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnIsertar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIsertar.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnIsertar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIsertar.Image = ((System.Drawing.Image)(resources.GetObject("btnIsertar.Image")));
@@ -351,11 +350,11 @@
             this.btnIsertar.TabIndex = 101;
             this.btnIsertar.Text = "Insertar";
             this.btnIsertar.UseVisualStyleBackColor = false;
+            this.btnIsertar.Click += new System.EventHandler(this.btnIsertar_Click_1);
             // 
             // btnActualizar
             // 
             this.btnActualizar.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnActualizar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
@@ -366,11 +365,11 @@
             this.btnActualizar.TabIndex = 100;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click_1);
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Trebuchet MS", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
@@ -381,18 +380,24 @@
             this.btnEliminar.TabIndex = 99;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // dgvVet
             // 
+            this.dgvVet.AllowUserToAddRows = false;
+            this.dgvVet.AllowUserToDeleteRows = false;
             this.dgvVet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvVet.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgvVet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVet.Location = new System.Drawing.Point(234, 218);
+            this.dgvVet.Location = new System.Drawing.Point(231, 218);
             this.dgvVet.Name = "dgvVet";
+            this.dgvVet.ReadOnly = true;
             this.dgvVet.RowTemplate.Height = 25;
             this.dgvVet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVet.Size = new System.Drawing.Size(596, 263);
             this.dgvVet.TabIndex = 98;
+            this.dgvVet.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVet_CellClick_1);
+            this.dgvVet.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVet_CellContentClick);
             // 
             // timer1
             // 
@@ -418,7 +423,7 @@
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Veterinaria Aguilera";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
+            this.Load += new System.EventHandler(this.Form2_Load_1);
             this.panelDatos.ResumeLayout(false);
             this.panelDatos.PerformLayout();
             this.panelNombre.ResumeLayout(false);
