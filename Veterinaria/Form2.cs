@@ -43,7 +43,7 @@ namespace Veterinaria
             }
         }
 
-        
+
 
         private async void AddProduct()
         {
@@ -84,7 +84,7 @@ namespace Veterinaria
             id = 0;
         }
 
-      
+
         private async void GetProductsById(int id)
         {
             using (var client = new HttpClient())
@@ -110,7 +110,7 @@ namespace Veterinaria
             }
         }
 
-       
+
 
         private async void UpdateProduct()
         {
@@ -137,7 +137,7 @@ namespace Veterinaria
             GetAllProducts();
         }
 
-       
+
 
         private async void DeleteProduct()
         {
@@ -226,6 +226,68 @@ namespace Veterinaria
             objLibro.SaveAs(ruta + "\\RegistroVeterinaria.xlsx");
             objLibro.Close();
             MessageBox.Show("Se creo el archivo excel correctamente");
+        }
+
+        private static void ValidarNumeros(KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else if (char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+        private static void SoloLetras(KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
+
+        private void txtPeso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumeros(e);
+        }
+
+        private void txtMedicamento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumeros(e);
+        }
+
+        private void txtEmpresa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            SoloLetras(e);
+        }
+
+        private void txtFechaCad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumeros(e);
+        }
+
+        private void txtEspecie_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarNumeros(e);
         }
     }
 }
